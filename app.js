@@ -1,10 +1,46 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-
+const session = require('express-session')
 const urlencodedParser = bodyParser.urlencoded({
     extended: false,
 })
+
+
+app.use (
+    session ({
+
+        // It holds the secret key for session
+        secret: "I am girl",
+
+        resave: true,
+
+
+        // Forces a session that is "uninitialized"
+        // to be saved to the store
+        saveUninitialized: false,
+        cookie: {}
+    })
+);
+app.get('/usersession', function(req, res, next) {
+
+    if (req.session.views) {
+
+        // Increment the number of views.
+        req.session.views++
+
+        // Print the views.
+        res.write('<p> No. of views: '
+            + req.session.views + '</p>')
+        res.end()
+    } else {
+        req.session.views = 1
+        res.end(' New session is started')
+    }
+})
+
+
+
 
 app.get('/register', urlencodedParser, function (
     request,
@@ -19,7 +55,7 @@ app.post('/register', urlencodedParser, function (
     if (!request.body) return response.sendStatus(400)
     console.log(request.body)
     response.send(
-        `имейл - ${request.body.email} имя - ${request.body.fname}`
+        `имейл - ${request.body.email} имя - ${request.body.fname} страна - ${request.body.country}`
     )
 })
 
