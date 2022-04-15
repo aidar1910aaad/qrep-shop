@@ -75,8 +75,7 @@ a{
     height: 100vh;
     min-height: 820px;
     position: relative;
-    background: center ;
-    background-image: url("intro.png");
+
     background-size: cover;
 
 }
