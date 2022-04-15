@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "pages/index.html"
+    "start": "app/app.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,9 @@
   "homepage": "https://github.com/aidar1910aaad/QREP1#readme",
   "devDependencies": {
     "express": "^4.17.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "ejs": "^3.1.6"
   }
 }
