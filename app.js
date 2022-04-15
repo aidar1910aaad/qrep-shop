@@ -9,15 +9,8 @@ const urlencodedParser = bodyParser.urlencoded({
 
 app.use (
     session ({
-
-        // It holds the secret key for session
-        secret: "I am girl",
-
+        secret: "fff",
         resave: true,
-
-
-        // Forces a session that is "uninitialized"
-        // to be saved to the store
         saveUninitialized: false,
         cookie: {}
     })
@@ -60,7 +53,7 @@ app.post('/register', urlencodedParser, function (
 })
 
 app.get('/', function (request, response) {
-    response.send('Главная страница')
+    response.sendFile(__dirname + '/pages/index.html')
 })
 
 app.listen(3000)
