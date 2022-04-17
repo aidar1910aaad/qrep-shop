@@ -57,7 +57,9 @@ a{
     justify-content: space-between;
     align-items: center;
 }
+.weather-part{
 
+}
 .header_logo {
     font-family: 'Tangerine', cursive;
     margin-left: 80px;
@@ -373,6 +375,9 @@ header i{
     font-size: 37px;
 }
 
+.city{
+    font-size: 50px;
+}
 
 
 
