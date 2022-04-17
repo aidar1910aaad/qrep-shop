@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const session = require('express-session')
+const axios = require('axios')
 const urlencodedParser = bodyParser.urlencoded({
     extended: false,
 })
@@ -54,6 +55,15 @@ app.post('/register', urlencodedParser, function (
 
 app.get('/', function (request, response) {
     response.sendFile(__dirname + '/pages/index.html')
+})
+
+let apiKey = "4e38a92605c5546ac5b1b69716f5483a";
+let city = "Moscow"
+let url = `https://api.openweathermap.org/data/2.5/weather?id=${1526273}&appid=${apiKey}&lang={ru}&units=metric`;
+
+axios.get(url).then(res => {
+    // Выводим результат в консоль браузера
+    console.log(res.data);
 })
 
 app.listen(3000)
