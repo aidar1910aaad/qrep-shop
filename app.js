@@ -35,7 +35,12 @@ app.get('/usersession', function(req, res, next) {
 })
 
 
-
+app.get('/signin', urlencodedParser, function (
+    request,
+    response
+) {
+    response.sendFile(__dirname + '/pages/auth.html')
+})
 
 app.get('/register', urlencodedParser, function (
     request,
@@ -58,6 +63,10 @@ app.get('/', function (request, response) {
     response.sendFile(__dirname + '/pages/index.html')
 })
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 21934150954dea1455203934bb7ea80ee724c6cc
 
 
 

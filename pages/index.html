@@ -24,7 +24,7 @@
 
 
 </head>
-<body>
+<body onload="checkCookie()">
 <header class="header" id="header" >
 
     <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #0F5298"   >
@@ -38,10 +38,18 @@
                     <li class="nav-item">
                         <a class="nav-link " aria-current="page" href="#services">Info <i class="fas fa-info"></i></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/pages/">Catalogue <i class="fas fa-tshirt"></i> </a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Catalogue</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">T-shirts</a></li>
+                            <li><a class="dropdown-item" href="#">Sweatshirts </a></li>
+                            <li><a class="dropdown-item" href="#">Hoodies</a></li>
+                            <li><a class="dropdown-item" href="#">Shirts</a></li>
+                            <li><a class="dropdown-item" href="#">Outwears</a></li>
+                            <li><a class="dropdown-item" href="#">Accessories</a></li>
+                            <li><a class="dropdown-item" href="#">Dishes</a></li>
+                        </ul>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link " aria-current="page" href="#">Wishlist <i class="fas fa-heart"></i></a>
                     </li>
@@ -49,7 +57,7 @@
                         <a class="nav-link " href="#footer">Contacts <i class="far fa-address-book"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="/register">Sign in <i class="fa-solid fa-door-open"></i></a>
+                        <a class="nav-link " aria-current="page" href="/auth.html">Sign in <i class="fa-solid fa-door-open"></i></a>
                     </li>
 
                 </ul>
@@ -183,7 +191,7 @@
                 </div>
             </div>
             <section class="weather-part col-sm-3">
-                
+
                 <div class="temp">
                     <span class="city"></span>
                 </div>
