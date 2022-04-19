@@ -15,6 +15,7 @@ app.use (
         saveUninitialized: false,
         cookie: {}
     })
+
 );
 app.get('/usersession', function(req, res, next) {
 
@@ -57,9 +58,10 @@ app.get('/', function (request, response) {
     response.sendFile(__dirname + '/pages/index.html')
 })
 
-let apiKey = "4e38a92605c5546ac5b1b69716f5483a";
-let city = "Moscow"
-let url = `https://api.openweathermap.org/data/2.5/weather?id=${1526273}&appid=${apiKey}&lang={ru}&units=metric`;
 
 
-app.listen(3000)
+
+app.listen(3000, () => {
+    console.log('http://localhost:3000/')
+})
+
