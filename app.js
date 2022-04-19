@@ -63,10 +63,8 @@ app.get('/', function (request, response) {
     response.sendFile(__dirname + '/pages/index.html')
 })
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 21934150954dea1455203934bb7ea80ee724c6cc
+
 
 
 
