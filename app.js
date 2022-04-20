@@ -55,7 +55,7 @@ app.post('/register', urlencodedParser, function (
     if (!request.body) return response.sendStatus(400)
     console.log(request.body)
     response.send(
-        `имейл - ${request.body.email} имя - ${request.body.fname} страна - ${request.body.country}`
+        `Email - ${request.body.email} Name - ${request.body.fname} Country - ${request.body.country}`
     )
 })
 
