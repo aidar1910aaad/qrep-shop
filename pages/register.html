@@ -13,8 +13,8 @@
         <p>Please fill in this form to create an account.</p>
         <hr>
 
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+        <input type="text" placeholder="Enter Email" name="email" id="emaill" required>
         <label for="fname"><b>Name</b></label>
         <input type="text" placeholder="Enter Name" name="fname" id="fname" required>
         <label for="sname"><b>Surname</b></label>
@@ -26,7 +26,8 @@
         <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
         <label for="country"><b>Country</b></label>
         <input type="text" placeholder="Country" name="country" id="country" required>
-        <button type="submit" class="registerbtn">Register</button>
+        <button type="submit" class="registerbtn" onclick="createCookie()" value="submit">Register</button>
+
     </div>
 
     <div class="container signin">
@@ -34,5 +35,49 @@
     </div>
 </form>
 
+<script>
+    function createCookie(name,pwds){
+        let username = document.getElementById("fname");
+        let pwd = document.getElementById("psw");
+        let email = document.getElementById("emaill");
+        let sm = document.getElementById("sname");
+        let country = document.getElementById("country");
+
+
+        today = new Date();
+        let expire = new Date();
+        expire.setTime(today.getTime() + 3600000*24*15);
+
+
+        document.cookie = "username="+username.value+";path=/" + ";expires="+expire.toUTCString();
+        document.cookie = "pwd="+encodeURI(pwd.value)+";path=/" + ";expires="+expire.toUTCString();
+        document.cookie = "email="+encodeURI(email.value)+";path=/" + ";expires="+expire.toUTCString();
+        document.cookie = "sm="+encodeURI(sm.value)+";path=/" + ";expires="+expire.toUTCString();
+        document.cookie = "country="+encodeURI(country.value)+";path=/" + ";expires="+expire.toUTCString();
+        //can only write one entity at a time (name, pass)
+    }
+
+
+    //event handler for page load - runs on every refresh
+    window.onload = function(){
+
+        //how to read back the stored name and password?
+        //https://stackoverflow.com/q/10730362/6160662
+        //https://stackoverflow.com/q/5639346/6160662
+
+
+        //for now
+
+
+        document.getElementById('username').value = uname;
+        document.getElementById('psw').value = pass;
+        document.getElementById('emaill').value = email;
+        document.getElementById('sname').value = snam;
+        document.getElementById('country').value = cont;
+
+
+
+    }
+</script>
 </body>
 </html>
