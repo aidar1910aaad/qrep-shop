@@ -18,13 +18,15 @@
   },
   "homepage": "https://github.com/aidar1910aaad/QREP1#readme",
   "devDependencies": {
-    "express": "^4.17.3"
+    "express": "^4.18.1"
   },
   "dependencies": {
     "axios": "^0.26.1",
     "body-parser": "^1.20.0",
     "ejs": "^3.0.2",
     "express-session": "^1.17.2",
-    "node-fetch": "^3.2.3"
+    "mongoose": "^6.3.2",
+    "node-fetch": "^3.2.3",
+    "nodemon": "^2.0.16"
   }
 }

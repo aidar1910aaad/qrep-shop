@@ -7,6 +7,7 @@ const urlencodedParser = bodyParser.urlencoded({
     extended: false,
 })
 
+app.use(express.static('public'));
 
 app.use (
     session ({
@@ -39,14 +40,31 @@ app.get('/signin', urlencodedParser, function (
     request,
     response
 ) {
-    response.sendFile(__dirname + '/pages/auth.html')
+    response.sendFile(__dirname + '/public/pages/auth.html')
 })
-
+app.get('/cart', urlencodedParser, function (
+    request,
+    response
+) {
+    response.sendFile(__dirname + '/public/pages/cart.html')
+})
+app.get('/wishlist', urlencodedParser, function (
+    request,
+    response
+) {
+    response.sendFile(__dirname + '/public/pages/wishlist.html')
+})
+app.get('/hoodies', urlencodedParser, function (
+    request,
+    response
+) {
+    response.sendFile(__dirname + '/public/pages/catalog/hoodies.html')
+})
 app.get('/register', urlencodedParser, function (
     request,
     response
 ) {
-    response.sendFile(__dirname + '/pages/register.html')
+    response.sendFile(__dirname + '/public/pages/register.html')
 })
 app.post('/register', urlencodedParser, function (
     request,
@@ -60,7 +78,7 @@ app.post('/register', urlencodedParser, function (
 })
 
 app.get('/', function (request, response) {
-    response.sendFile(__dirname + '/pages/index.html')
+    response.sendFile(__dirname + '/public/pages/index.html')
 })
 
 
