@@ -14,7 +14,7 @@ const urlencodedParser = bodyParser.urlencoded({
 })
 const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bhjb2qiuhesdbhjdsfg839ujkdhfjk'
 
-mongoose.connect('mongodb+srv://admin:<password>@cluster0.2f4sk.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://admin:admin@cluster0.2f4sk.mongodb.net/?retryWrites=true&w=majority',
     err => {
         if(err) throw err;
         console.log('connected to MongoDB')
