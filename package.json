@@ -5,6 +5,9 @@
   "scripts": {
     "start": "node app.js"
   },
+  "engines": {
+    "node": "6.11.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aidar1910aaad/QREP1.git"
