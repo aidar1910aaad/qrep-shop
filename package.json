@@ -26,11 +26,9 @@
     "body-parser": "^1.20.0",
     "ejs": "^3.0.2",
     "express-session": "^1.17.2",
-    "heroku": "^7.60.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.3.3",
+    "mongoose": "^6.3.2",
     "node-fetch": "^3.2.3",
-    "nodemon": "^2.0.16",
-    "yarn": "^1.22.18"
+    "nodemon": "^2.0.16"
   }
 }

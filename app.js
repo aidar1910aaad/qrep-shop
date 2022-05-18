@@ -14,7 +14,7 @@ const urlencodedParser = bodyParser.urlencoded({
 })
 const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bhjb2qiuhesdbhjdsfg839ujkdhfjk'
 
-mongoose.connect('mongodb://localhost:27017/register',
+mongoose.connect('mongodb+srv://admin:<password>@cluster0.2f4sk.mongodb.net/?retryWrites=true&w=majority',
     err => {
         if(err) throw err;
         console.log('connected to MongoDB')
@@ -138,7 +138,7 @@ app.get('/register', urlencodedParser, function (
     request,
     response
 ) {
-    response.sendFile(__dirname + '/public/pages/register.html')
+    response.sendFile(__dirname + '/public/register.html')
 })
 app.post('/register', urlencodedParser, function (
     request,
