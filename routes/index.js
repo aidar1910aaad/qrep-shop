@@ -12,7 +12,7 @@ router.get('/', function (req, res, next) {
 
 
 
-
+	let decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
 router.post('/', function(req, res, next) {
 	console.log(req.body);
 	let personInfo = req.body;
@@ -21,7 +21,7 @@ router.post('/', function(req, res, next) {
 	if(!personInfo.email || !personInfo.username || !personInfo.password || !personInfo.passwordConf){
 		res.send();
 	} else {
-		if (personInfo.password == personInfo.passwordConf) {
+		if (personInfo.password == personInfo.passwordConf && personInfo.password.match(decimal)) {
 
 			UserModel.findOne({email:personInfo.email},function(err,data){
 				if(!data){
@@ -62,6 +62,7 @@ router.post('/', function(req, res, next) {
 		}
 	}
 });
+
 
 
 router.get('/login', function (req, res, next) {
