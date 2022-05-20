@@ -1,10 +1,16 @@
+
+
 let express = require('express');
 let router = express.Router();
-let User = require('../models/user');
+let UserModel = require('../models/user');
+const UserController = require('../controllers/UserController')
+
 
 router.get('/', function (req, res, next) {
 	return res.render('index.ejs');
 });
+
+
 
 
 router.post('/', function(req, res, next) {
@@ -17,10 +23,10 @@ router.post('/', function(req, res, next) {
 	} else {
 		if (personInfo.password == personInfo.passwordConf) {
 
-			User.findOne({email:personInfo.email},function(err,data){
+			UserModel.findOne({email:personInfo.email},function(err,data){
 				if(!data){
 					let c;
-					User.findOne({},function(err,data){
+					UserModel.findOne({},function(err,data){
 
 						if (data) {
 							console.log("if");
@@ -29,7 +35,7 @@ router.post('/', function(req, res, next) {
 							c=1;
 						}
 
-						let newPerson = new User({
+						let newPerson = new UserModel({
 							unique_id:c,
 							email:personInfo.email,
 							username: personInfo.username,
@@ -57,14 +63,26 @@ router.post('/', function(req, res, next) {
 	}
 });
 
+
 router.get('/login', function (req, res, next) {
 	return res.render('login.ejs');
 });
+router.get('/admin', function (req, res, next) {
+	return res.render('admin.ejs');
+});
+router.get('/delete', function (req, res, next) {
+	return res.render('delete.ejs');
+});
+router.get('/find', function (req, res, next) {
+	return res.render('find.ejs');
+});
+
+
 
 
 router.post('/login', function (req, res, next) {
 	//console.log(req.body);
-	User.findOne({email:req.body.email},function(err,data){
+	UserModel.findOne({email:req.body.email},function(err,data){
 		if(data){
 			
 			if(data.password==req.body.password){
@@ -84,7 +102,7 @@ router.post('/login', function (req, res, next) {
 
 router.get('/profile', function (req, res, next) {
 	console.log("profile");
-	User.findOne({unique_id:req.session.userId},function(err,data){
+	UserModel.findOne({unique_id:req.session.userId},function(err,data){
 		console.log("data");
 		console.log(data);
 		if(!data){
@@ -117,7 +135,7 @@ router.get('/forgetpass', function (req, res, next) {
 router.post('/forgetpass', function (req, res, next) {
 	//console.log('req.body');
 	//console.log(req.body);
-	User.findOne({email:req.body.email},function(err,data){
+	UserModel.findOne({email:req.body.email},function(err,data){
 		console.log(data);
 		if(!data){
 			res.send({"Success":"This Email Is not regestered!"});
@@ -144,4 +162,13 @@ router.post('/forgetpass', function (req, res, next) {
 router.get('/home', function (req, res, next) {
 	return res.render('home.ejs');
 });
+router.get('/:email', UserController.findAll);
+//router.get('/:id', UserController.findOne);
+router.get('/:email', UserController.findOne);
+
+
+
+//router.delete('/:id', UserController.destroy);
+router.delete('/:email', UserController.destroy);
+//router.post('/delete/:email', UserController.destroy);
 module.exports = router;

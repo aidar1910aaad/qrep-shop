@@ -6,7 +6,9 @@ let app = express();
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 let session = require('express-session');
-
+const methodOverride = require('method-override')
+const swaggerUi = require('swagger-ui-express')
+swaggerDocument = require('./swagger.json');
 
 
 mongoose.connect('mongodb+srv://admin:admin@cluster0.2f4sk.mongodb.net/registration?retryWrites=true&w=majority', {
@@ -37,6 +39,7 @@ app.use(session({
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(express.static('public'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -55,6 +58,24 @@ app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.send(err.message);
 });
+
+
+
+
+
+const UserRoute = require('./routes/index')
+app.use('/user',UserRoute)
+
+app.get('/delete', (req, res) => {
+    res.render('delete');
+});
+app.get('/find', (req, res) => {
+    res.render('find');
+});
+
+
+
+
 
 
 
