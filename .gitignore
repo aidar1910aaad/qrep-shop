@@ -1,1 +1,8 @@
+<<<<<<< HEAD
 */node_modules/*
+=======
+/node_modules
+npm-debug.log
+.DS_Store
+/*.env
+>>>>>>> dee63656a472cec5208afbbaf60c4346c379c583

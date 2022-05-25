@@ -1,0 +1,587 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+}
+.container {
+    width: 100%;
+    max-width: 1230px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+}
+.navbar-brand{
+    font-family: Tangerine, serif;
+    font-size: 90px;
+    font-weight: 700;
+
+
+}
+.nav-link{
+
+    font-size: 20px;
+    color: white;
+}
+/* Header */
+.header {
+    width: 100%;
+    padding-top: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: 200ms 200ms;
+}
+
+.header.fixed {
+    padding: 5px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: scale(1);
+    transition: 200ms 200ms;
+}
+
+
+
+.header_in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.weather-part{
+
+}
+.header_logo {
+    font-family: 'Tangerine', cursive;
+    margin-left: 80px;
+    margin-top: -15px;
+    font-size: 45px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    min-height: 820px;
+    position: relative;
+
+    background-size: cover;
+
+}
+.intro_in{
+    width: 100%;
+    max-width: 700px;
+    margin: 500px ;
+    text-align: center;
+}
+.section_title{
+    font-size: 36px;
+    font-family: 'Montserrat';
+    text-align: center;
+}
+.section_suptitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: #333;
+}
+.faq-heading{
+    border-bottom: #777;
+    padding: 20px 60px;
+    font-size: 30px;
+}
+.faq-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.hr-line{
+    width: 60%;
+    margin: auto;
+
+}
+/* Style the buttons that are used to open and close the faq-page body */
+.faq-page {
+    /* background-color: #eee; */
+    font-family: 'Montserrat', sans-serif;
+    color: #444;
+    cursor: pointer;
+    padding: 30px 20px;
+    width: 60%;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin: auto;
+}
+.h1.faq-page{
+    font-size: 25px;
+}
+.faq-body{
+    margin: auto;
+    /* text-align: center; */
+    width: 50%;
+    padding: auto;
+
+}
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.faq-page:hover {
+    background-color: #F9F9F9;
+}
+/* Style the faq-page panel. Note: hidden by default */
+.faq-body {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+.faq-page:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+.active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
+
+.footer {
+    padding-top: 65px;
+
+    background-color: #f8f8f8;
+}
+
+.footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -15px;
+    padding-bottom: 65px;
+}
+
+
+.footer__logo {
+    margin-bottom: 30px;
+
+    font-size: 30px;
+    font-weight: 700;
+    color: #ccc;
+}
+
+.footer__text {
+    margin-bottom: 30px;
+
+    font-size: 15px;
+    color: #999;
+}
+
+
+.footer__social-header {
+    padding-bottom: 15px;
+
+    font-size: 14px;
+    color: #333;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+
+
+.footer__social-content {
+    padding-top: 15px;
+
+    font-size: 17px;
+    color: #999;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.footer__social-content a {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+
+    font-size: 17px;
+    color: #0F5298;
+}
+
+.footer__title {
+    margin: 30px 0;
+
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+
+
+
+
+/* Instagram */
+.instagram {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.instagram__item {
+    width: 33%;
+    border-bottom: 1px solid #fff;
+}
+
+.instagram__item img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+::selection{
+    color: #fff;
+    background: #43AFFC;
+}
+.wrapper{
+    width: 400px;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+}
+.wrapper header{
+    display: flex;
+    font-size: 21px;
+    font-weight: 500;
+    color: #43AFFC;
+    padding: 16px 15px;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+header i{
+    font-size: 0em;
+    cursor: pointer;
+    margin-right: 8px;
+}
+.wrapper.active header i{
+    margin-left: 5px;
+    font-size: 30px;
+}
+.wrapper .input-part{
+    margin: 20px 25px 30px;
+}
+.wrapper.active .input-part{
+    display: none;
+}
+.input-part .info-txt{
+    display: none;
+    font-size: 17px;
+    text-align: center;
+    padding: 12px 10px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+}
+.input-part .info-txt.error{
+    color: #721c24;
+    display: block;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+.input-part .info-txt.pending{
+    color: #0c5460;
+    display: block;
+    background: #d1ecf1;
+    border: 1px solid #bee5eb;
+}
+.input-part :where(input, button){
+    width: 100%;
+    height: 55px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-radius: 7px;
+}
+.input-part input{
+    text-align: center;
+    padding: 0 15px;
+    border: 1px solid #ccc;
+}
+.input-part input:is(:focus, :valid){
+    border: 2px solid #43AFFC;
+}
+.input-part input::placeholder{
+    color: #bfbfbf;
+}
+.input-part .separator{
+    height: 1px;
+    width: 100%;
+    margin: 25px 0;
+    background: #ccc;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.separator::before{
+    content: "or";
+    color: #b3b3b3;
+    font-size: 19px;
+    padding: 0 15px;
+    background: #fff;
+}
+.input-part button{
+    color: #fff;
+    cursor: pointer;
+    background: #43AFFC;
+    transition: 0.3s ease;
+}
+.input-part button:hover{
+    background: #1d9ffc;
+}
+
+.wrapper .weather-part{
+    display: none;
+    margin: 30px 0 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.wrapper.active .weather-part{
+    display: flex;
+}
+.weather-part img{
+    max-width: 125px;
+}
+.weather-part .temp{
+    display: flex;
+    font-weight: 500;
+    font-size: 72px;
+}
+.weather-part .temp .numb{
+    font-weight: 600;
+}
+.weather-part .temp .deg{
+    font-size: 40px;
+    display: block;
+    margin: 10px 5px 0 0;
+}
+.weather-part .weather{
+    font-size: 21px;
+    text-align: center;
+    margin: -5px 20px 15px;
+}
+.weather-part .location{
+    display: flex;
+    font-size: 19px;
+    padding: 0 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+.location i{
+    font-size: 22px;
+    margin: 4px 5px 0 0;
+}
+.weather-part .bottom-details{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+}
+.bottom-details .column{
+    display: flex;
+    width: 100%;
+    padding: 15px 0;
+    align-items: center;
+    justify-content: center;
+}
+.column i{
+    color: #5DBBFF;
+    font-size: 40px;
+}
+.column.humidity{
+    border-left: 1px solid #ccc;
+}
+.column .details{
+    margin-left: 3px;
+}
+.details .temp, .humidity span{
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: -3px;
+}
+.details .temp .deg{
+    margin: 0;
+    font-size: 17px;
+    padding: 0 2px 0 1px;
+}
+.column .details p{
+    font-size: 14px;
+    margin-top: -6px;
+}
+.humidity i{
+    font-size: 37px;
+}
+
+.city{
+    font-size: 50px;
+}
+
+.cart-wrap {
+    padding: 40px 0;
+    font-family: 'Open Sans', sans-serif;
+}
+.main-heading {
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+.table-wishlist table {
+    width: 100%;
+}
+.table-wishlist thead {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 5px;
+}
+.table-wishlist thead tr th {
+    padding: 50px 0 18px;
+    color: #484848;
+    font-size: 15px;
+    font-weight: 400;
+}
+.table-wishlist tr td {
+    padding: 25px 0;
+    vertical-align: middle;
+}
+.table-wishlist tr td .img-product {
+    width: 72px;
+    float: left;
+    margin-left: 8px;
+    margin-right: 31px;
+    line-height: 63px;
+}
+.table-wishlist tr td .img-product img {
+    width: 100%;
+}
+.table-wishlist tr td .name-product {
+    font-size: 15px;
+    color: #484848;
+    padding-top: 8px;
+    line-height: 24px;
+    width: 50%;
+}
+.table-wishlist tr td.price {
+    font-weight: 600;
+}
+.table-wishlist tr td .quanlity {
+    position: relative;
+}
+
+.total {
+    font-size: 24px;
+    font-weight: 600;
+    color: #8660e9;
+}
+.display-flex {
+    display: flex;
+}
+.align-center {
+    align-items: center;
+}
+.round-black-btn {
+    border-radius: 25px;
+    background: #212529;
+    color: #fff;
+    padding: 5px 20px;
+    display: inline-block;
+    border: solid 2px #212529;
+    transition: all 0.5s ease-in-out 0s;
+    cursor: pointer;
+    font-size: 14px;
+}
+.round-black-btn:hover,
+.round-black-btn:focus {
+    background: transparent;
+    color: #212529;
+    text-decoration: none;
+}
+.mb-10 {
+    margin-bottom: 10px !important;
+}
+.mt-30 {
+    margin-top: 30px !important;
+}
+.d-block {
+    display: block;
+}
+.custom-form label {
+    font-size: 14px;
+    line-height: 14px;
+}
+.pretty.p-default {
+    margin-bottom: 15px;
+}
+.pretty input:checked~.state.p-primary-o label:before,
+.pretty.p-toggle .state.p-primary-o label:before {
+    border-color: #8660e9;
+}
+.pretty.p-default:not(.p-fill) input:checked~.state.p-primary-o label:after {
+    background-color: #8660e9 !important;
+}
+.main-heading.border-b {
+    border-bottom: solid 1px #ededed;
+    padding-bottom: 15px;
+    margin-bottom: 20px !important;
+}
+.custom-form .pretty .state label {
+    padding-left: 6px;
+}
+.custom-form .pretty .state label:before {
+    top: 1px;
+}
+.custom-form .pretty .state label:after {
+    top: 1px;
+}
+.custom-form .form-control {
+    font-size: 14px;
+    height: 38px;
+}
+.custom-form .form-control:focus {
+    box-shadow: none;
+}
+.custom-form textarea.form-control {
+    height: auto;
+}
+.mt-40 {
+    margin-top: 40px !important;
+}
+.in-stock-box {
+    background: #006fff;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 25px;
+    padding: 4px 15px;
+    display: inline-block;
+    color: #fff;
+}
+.trash-icon {
+    font-size: 20px;
+    color: #212529;
+}
+
+
+
+
