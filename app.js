@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
@@ -71,7 +71,7 @@ app.get('/', function (request, response) {
 
 app.listen(3000, () => {
     console.log('http://localhost:3000/')
-=======
+
 let express = require('express');
 let env = require('dotenv').config()
 let ejs = require('ejs');
@@ -156,6 +156,5 @@ app.get('/find', (req, res) => {
 app.listen(process.env.PORT || 3000, () => {
 
     console.log('Server is started on http://127.0.0.1:'+3000)
->>>>>>> dee63656a472cec5208afbbaf60c4346c379c583
-})
 
+})})
